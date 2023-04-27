@@ -14,35 +14,40 @@ public class TerfogatTest {
         this.terfogat = new Terfogat();
     }
     @Test
-    public void testAoldal() {        
+    public void testBekerData() {        
         double actual = terfogat.bekerData(50000, 5, 1);
         assertEquals(actual, 2500.0, 0.01, "Nem 2500-t kaptam");
     }
     @Test
-    public void testTerfogat() {
+    public void testBeker() {
         double actual = terfogat.szamitas(50000, 3, 12);
         assertEquals(actual, 1520.7, 0.1, "Nem 1520-t kaptam");
     }
 
     @Test
-    public void testbekero0() {
+    public void testSzamitas(){
+
+    }
+    @Test
+    public void testCheckInput() {
         boolean actual = terfogat.checkInput("33");
         assertTrue(actual);
     }
     @Test
-    public void testbekero1() {
+    public void testCheckInputFloat() {
         boolean actual = terfogat.checkInput("33.5");
         assertTrue(actual);
     }
     @Test 
-    public void testbekero2() {
+    public void testCheckInputFalse() {
         boolean actual = terfogat.checkInput("a");
         assertFalse(actual);
     }
     @Test 
-    public void testbekero3() {
+    public void testCheckInputSpecial() {
         boolean actual = terfogat.checkInput("@");
         assertFalse(actual);
     }
+  
     
 }
